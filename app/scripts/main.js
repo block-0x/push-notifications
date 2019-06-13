@@ -1,26 +1,3 @@
-/*
-*
-*  Push Notifications codelab
-*  Copyright 2015 Google Inc. All rights reserved.
-*
-*  Licensed under the Apache License, Version 2.0 (the "License");
-*  you may not use this file except in compliance with the License.
-*  You may obtain a copy of the License at
-*
-*      https://www.apache.org/licenses/LICENSE-2.0
-*
-*  Unless required by applicable law or agreed to in writing, software
-*  distributed under the License is distributed on an "AS IS" BASIS,
-*  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-*  See the License for the specific language governing permissions and
-*  limitations under the License
-*
-*/
-// BNjuSApoVDJAuZR-NHDT-8m-f7nX-0FeuEvjR5C8wZjOsoUUSknaOye8DamiO38OgbjyXramNkrCEp7WFMsPf5E
-
-/* eslint-env browser, es6 */
-
-'use strict';
   const applicationServerPublicKey = "BNjuSApoVDJAuZR-NHDT-8m-f7nX-0FeuEvjR5C8wZjOsoUUSknaOye8DamiO38OgbjyXramNkrCEp7WFMsPf5E";
 
   const pushButton = document.querySelector('.js-push-btn');
@@ -83,16 +60,6 @@
         updateBtn();
       });
     }
-
-    // function updateBtn() {
-    //   if (isSubscribed) {
-    //     pushButton.textContent = 'Disable Push Messaging';
-    //   } else {
-    //     pushButton.textContent = 'Enable Push Messaging';
-    //   }
-
-    //   pushButton.disabled = false;
-    // }
 
       navigator.serviceWorker.register('sw.js')
       .then(function(swReg) {
@@ -181,7 +148,7 @@
       }
 
       function updateSubscriptionOnServer(subscription) {
-        // TODO: Send subscription to application server
+
 
         const subscriptionJson = document.querySelector('.js-subscription-json');
         const subscriptionDetails =
@@ -198,8 +165,8 @@
     function postJson(jStr) {
         var http = new XMLHttpRequest();
         http.onreadystatechange = function () {
-            if (http.readyState == 4) { // 通信の完了時
-                if (http.status == 200) { // 通信の成功時
+            if (http.readyState == 4) {
+                if (http.status == 200) {
                     console.log(http.responseText);
                 } else {
                 }
